@@ -16,6 +16,10 @@ export default {
     ]
   },
 
+  router:{
+    base: '/microblog/'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
