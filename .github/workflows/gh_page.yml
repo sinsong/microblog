@@ -1,0 +1,25 @@
+name: Github Pages
+on [push, pull_request]
+
+jobs:
+  gh_pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate
+        run: npm run generate
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SECRET }}
+          publish_dir: ./dist
