@@ -37,7 +37,7 @@
 .page
 {
   /* background-color: #22272e; */
-  background-image: url("/bg/b3.png");
+  background-image: url("/microblog/bg/b3.png");
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -90,9 +90,9 @@ export default {
     posts: [
       // {name: "", avatar: "", time: "", content: ""}
 
-      {name: "莉特雅", avatar: "/avatar/literal.png", time: new Date("2021-08-24 17:34:00+0800"), content: about},
-      {name: "莉特雅", avatar: "/avatar/literal.png", time: new Date("2021-08-17 16:46:14+0800"), content: "您好！欢迎使用！"},
-      {name: "lo娘莉特雅", avatar: "/avatar/a1.jpg", time: new Date("2021-08-17 16:57:15+0800"), content: "好耶！"},
+      {name: "莉特雅", avatar: "/microblog/avatar/literal.png", time: new Date("2021-08-24 17:34:00+0800"), content: about},
+      {name: "莉特雅", avatar: "/microblog/avatar/literal.png", time: new Date("2021-08-17 16:46:14+0800"), content: "您好！欢迎使用！"},
+      {name: "lo娘莉特雅", avatar: "/microblog/avatar/a1.jpg", time: new Date("2021-08-17 16:57:15+0800"), content: "好耶！"},
     ]
   }},
   methods:{
