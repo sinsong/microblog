@@ -17,7 +17,7 @@
       <button class="code"   v-html="icons.code"   @click="insertFormat('`','`')"></button>
       <button class="at"     v-html="icons.at"     @click="insertFormat('@', '')"></button>
       <!-- 发布按钮 -->
-      <button class="publish" @click="$emit('publish', content), content = ''" :disabled="content.length == 0">发布</button>
+      <button class="publish" @click="publish" :disabled="content.length == 0">发布</button>
     </div>
   </div>
 </template>
@@ -55,6 +55,14 @@ export default {
     }
   },
   methods:{
+    // 发布
+    publish: function()
+    {
+      this.$emit('publish', this.content)
+      this.content = ''
+      this.files = []
+      this.previews = []
+    },
     // 获取选择
     selection: function()
     {
