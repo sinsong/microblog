@@ -18,22 +18,28 @@
 
     <b-container class="page" fluid>
       <b-row>
-        <b-col md="5" class="mx-auto">
-          <div class="center">
-            <editor @publish="publish" />
-            <headbar />
-            <transition-group name="posts">
-              <!-- key 不对，过渡效果也不对 -->
-              <post v-for="post in posts" :key="post.time.valueOf()" :post="post" />
-            </transition-group>
+        <b-col xl="4" lg="6" md="7" sm="12" class="mx-auto">
+          <editor @publish="publish" />
+          <headbar />
+          <transition-group name="posts">
+            <!-- key 不对，过渡效果也不对 -->
+            <post v-for="post in posts" :key="post.time.valueOf()" :post="post" />
+          </transition-group>
+
+          <div class="endline">
+            <p>END</p>
           </div>
+          
+          <footer>
+            Made by literal kernel
+          </footer>
         </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .page
 {
   /* background-color: #22272e; */
@@ -42,10 +48,40 @@
   background-attachment: fixed;
   min-height: 100vh;
 }
-.center
+
+.endline
 {
-  margin: 0 auto;
-  max-width: 720px;
+  flex-direction: column;
+  p
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+
+    &::before,
+    &::after
+    {
+      content: "";
+      border: 1px solid #fff;
+      display: inline-block;
+      height: 1px;
+      width: 42%;
+    }
+
+    &::before { margin-right: 1.5em; }
+    &::after  { margin-left: 1.5em;  }
+  }
+  
+}
+
+footer
+{
+  padding: 15px;
+  color: #fff;
+  text-align: center;
 }
 
 .posts-enter-active,
